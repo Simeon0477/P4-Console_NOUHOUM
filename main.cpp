@@ -271,6 +271,60 @@ int prediction(int grid[7][6], int player){
                 return i+4;
         }
     }
+    for(i = 0; i < 4 ; i++){
+        for(j = 0; j < 6; j++){
+            if(grid[i][j] == player && grid[i+1][j] == player && grid[i+2][j] == 0 && grid[i+3][j] == player)
+                return i+3;
+        }
+    }
+    for(i = 0; i < 4 ; i++){
+        for(j = 0; j < 6; j++){
+            if(grid[i][j] == player && grid[i+1][j] == 0 && grid[i+2][j] == player && grid[i+3][j] == player)
+                return i+2;
+        }
+    }
+    for(i = 0; i < 4 ; i++){
+        for(j = 0; j < 6; j++){
+            if(grid[i][j] == 0 && grid[i+1][j] == player && grid[i+2][j] == player && grid[i+3][j] == player)
+                return i;
+        }
+    }
+    for(i = 0; i < 4 ; i++){
+        for(j = 0; j < 3; j++){
+            if(grid[i][j] == player && grid[i+1][j+1] == player && grid[i+2][j+2] == 0 && grid[i+3][j+3] == player)
+                return i+3;
+        }
+    }
+    for(i = 0; i < 7 ; i++){
+        for(j = 5; j > 2; j--){
+            if(grid[i][j] == player && grid[i+1][j-1] == player && grid[i+2][j-2] == 0 && grid[i+3][j-3] == player)
+                return i+3;
+        }
+    }
+    for(i = 0; i < 4 ; i++){
+        for(j = 0; j < 3; j++){
+            if(grid[i][j] == player && grid[i+1][j+1] == 0 && grid[i+2][j+2] == player && grid[i+3][j+3] == player)
+                return i+2;
+        }
+    }
+    for(i = 0; i < 7 ; i++){
+        for(j = 5; j > 2; j--){
+            if(grid[i][j] == player && grid[i+1][j-1] == 0 && grid[i+2][j-2] == player && grid[i+3][j-3] == player)
+                return i+2;
+        }
+    }
+    for(i = 0; i < 4 ; i++){
+        for(j = 0; j < 3; j++){
+            if(grid[i][j] == 0 && grid[i+1][j+1] == player && grid[i+2][j+2] == player && grid[i+3][j+3] == player)
+                return i+1;
+        }
+    }
+    for(i = 0; i < 7 ; i++){
+        for(j = 5; j > 2; j--){
+            if(grid[i][j] == 0 && grid[i+1][j-1] == player && grid[i+2][j-2] == player && grid[i+3][j-3] == player)
+                return i+1;
+        }
+    }
 
     return 10;
 }
